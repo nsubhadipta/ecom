@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+  <head>
+    <title>Login and Registration</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="form-container">
+      <div style="margin-right: 90px;">
+        <form id="login-form">
+          <h1>Login</h1>
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" required>
+          <label for="password">Password:</label>
+          <input type="password" name="password" id="password" required>
+          <button type="submit">Sign In</button>
+        </form>
+        <div id="errorMessage" style="display:none; color: red;">*Invalid Credential</div>
+      </div>
+      <div style="margin-left: 90px;">
+        <form id="register-form">
+          <h1>Registration</h1>
+          <label for="username">Username:</label>
+          <input type="text" name="username"id="username" required>
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" required>
+          <label for="password">Password:</label>
+          <input type="password" name="password" id="password" required>
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+
+    
+  </body>
+</html>

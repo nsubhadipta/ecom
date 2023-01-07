@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cart Page</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="cart-page-container">
+    <!-- Page header -->
+    <div class="page-header">
+      <h1>My Cart</h1>
+    </div>
+
+    <!-- Cart table -->
+    <table class="cart-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="cart-item">
+              <img src="https://via.placeholder.com/100x100" alt="Product image">
+              <div class="product-details">
+                <h3>Product 1</h3>
+                <p>Lorem ipsum dolor sit amet</p>
+              </div>
+            </div>
+          </td>
+          <td>$19.99</td>
+          <td>
+            <input type="number" value="1">
+          </td>
+          <td>$19.99</td>
+          <td>
+            <button class="remove-button">Remove</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="cart-item">
+              <img src="https://via.placeholder.com/100x100" alt="Product image">
+              <div class="product-details">
+                <h3>Product 2</h3>
+                <p>Lorem ipsum dolor sit amet</p>
+              </div>
+            </div>
+          </td>
+          <td>$29.99</td>
+          <td>
+            <input type="number" value="1">
+          </td>
+          <td>$29.99</td>
+          <td>
+            <button class="remove-button">Remove</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Cart total -->
+    <div class="cart-total">
+      <h2>Total: $49.98</h2>
+      <button class="checkout-button">Checkout</button>
+    </div>
+  </div>
+</body>
+</html>
