@@ -4,14 +4,12 @@ const mysql = require('mysql');
 const app = express();
 const PORT = 5500;
 
-const helmet = require("helmet"); //For securing Express apps by setting various HTTP headers
+const helmet = require("helmet"); 
 const cors = require("cors");
-const path = require( 'path' );
-const fs = require( 'fs' );
 
-app.use(helmet()); // Using Helmet in Middleware For securing Express apps by setting various HTTP headers
-app.use(cors()); // For allowing Cross-Origin-Resource-Sharing
-app.options("*", cors()); // For allowing Cross-Origin-Resource-Sharing for every type of HTTP Method
+app.use(helmet()); 
+app.use(cors());
+app.options("*", cors()); 
 app.use(express.json());
 
 
@@ -31,14 +29,11 @@ connection.connect((error) => {
   }
 });
 
-// Set up the server-side routes
 
 // Registration route
 app.post('/register', (req, res) => {
-  // Retrieve the form data from the request object
   const { email, password, username } = req.body;
 
-  // Insert the form data into the database using a MySQL query
   connection.query(
     'INSERT INTO users (email, password, username) VALUES (?, ?, ?)',
     [email, password, username],
@@ -54,11 +49,9 @@ app.post('/register', (req, res) => {
 // Login route
 app.post('/login', (req, res) => {
     res.set("Access-Control-Allow-Origin", "*");
-  // Retrieve the form data from the request object
   const { email, password } = req.body;
   console.log("hello",email);
 
-  // Retrieve the user's record from the database using a MySQL query
   connection.query(
     'SELECT * FROM users WHERE email = ?',
     [email],
@@ -73,8 +66,6 @@ app.post('/login', (req, res) => {
       if (user.password !== password) {
         return res.status(401).send('Email or password is incorrect');
       }
-      // Set a session cookie or store the user's information in a session object to keep them logged in
-    //   req.session.user = user;
       return res.json({status:1,msg:'Login successful'});
     }
   );

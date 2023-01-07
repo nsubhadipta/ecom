@@ -7,8 +7,6 @@ loginForm.addEventListener('submit', (event) => {
   const email = formData.get('email');
   const password = formData.get('password');
 
-  console.log(email,password);
-
   fetch('http://localhost:5500/login', {
     method: 'POST',
     body: JSON.stringify({ email, password }),
@@ -21,15 +19,12 @@ loginForm.addEventListener('submit', (event) => {
         window.location.href = 'cart.html';
       }else{
         errorMessage.style.display = 'block';
-        // throw new Error('Email or password is incorrect');
       }
     })
     .then((data) => {
-      // Update the UI to show that the user is logged in
       console.log(data);
     })
     .catch((error) => {
-      // Show an error message
       console.error(error);
     });
 });
@@ -56,11 +51,9 @@ registerForm.addEventListener('submit', (event) => {
       throw new Error('Registration failed');
     })
     .then((data) => {
-      // Update the UI to show that the user is registered
       console.log(data);
     })
     .catch((error) => {
-      // Show an error message
       console.error(error);
     });
 });
